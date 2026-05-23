@@ -5,7 +5,6 @@ import express, {
   type Request,
   type Response,
 } from "express";
-import logger from "./middleware/logger";
 import { authRoute } from "./modules/auth/auth.route";
 import { issueRoute } from "./modules/issue/issue.route";
 import { userRoute } from "./modules/user/user.route";
@@ -16,7 +15,7 @@ app.use(CookieParser());
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
-app.use(logger);
+// app.use(logger);
 
 app.use(
   cors({
